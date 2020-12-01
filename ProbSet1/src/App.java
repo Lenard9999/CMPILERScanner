@@ -11,7 +11,6 @@ public class App {
         File output = new File("src/txtFiles/Output.txt");
         FileWriter fw = new FileWriter(output);
 
-
         try{
             File input = new File("src/txtFiles/TestCase.txt");
             Scanner reader = new Scanner(input);
@@ -51,7 +50,7 @@ public class App {
                         case 'R': cs = 'l'; break;
                         case '$': cs = 'p'; break;
                         case 'F': cs = 'q'; break;
-                        default: cs = 'a'; 
+                        default: cs = 'D'; 
                     }
                     break;
                 case 'b':
@@ -197,6 +196,8 @@ public class App {
         } else if (cs == 'r' || cs == 's' || cs == 't'){
             finalOutput += "FPR";
         } else if (cs == 'a' || cs == 'D'){
+            finalOutput += "ERROR";
+        } else{
             finalOutput += "ERROR";
         }
 
