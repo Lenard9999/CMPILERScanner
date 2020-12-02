@@ -1,8 +1,9 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class App {
     static String FINAL_STRING = "";
@@ -13,10 +14,13 @@ public class App {
 
         try{
             File input = new File("src/txtFiles/TestCase.txt");
-            Scanner reader = new Scanner(input);
+            FileReader fr = new FileReader(input);
+            BufferedReader reader = new BufferedReader(fr);
+            String strings;
 
-            while (reader.hasNext()){
-                String[] tokens = reader.nextLine().split(" ");
+            while ((strings = reader.readLine()) != null){
+                String[] tokens = strings.split(" ");
+
                 for (String token : tokens) {
                     if(!token.equals("")){
                         checkToken(token);
